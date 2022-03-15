@@ -1,24 +1,42 @@
 # Projeto - Mackenzie Prática Profissional Em Análise Desenvolvimento De Sistemas Turma 05H - 2022/1
----
+
 Proposta de desenvolvimento:
 GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias jogando browser games.
 
 ---
+**Integrantes do grupo:**
+
+- Nome: Jacques Ferreira Especier TIA: 41834011
+- Nome: Tiago Nunes
+
+---
+
+
 
 **Índice**
 
 - [1. Introdução](#1-introdução)
-- [2. Objetivos funcionais](#2-informações-sobre-a-empresa)
-- [3. Casos de uso](#8-casos-de-uso)
-- [4. Wireframes](#9-wireframes)
-- [5. Diagrama de classes de domínio](#10-diagrama-de-classes-de-domínio)
+- [2. Interessados](#2-Interessados)
+- [3. Objetivos funcionais](#3-objetivos-funcionais)
+- [4. Objetivos não-funcionais](#4-objetivos-nao-funcionais)
+- [5. Casos de uso](#5-casos-de-uso)
+- [6. Descrição detalhada dos casos de uso principais](#6-detalhamento-casos-de-uso) 
+- [7. Wireframes](#7-wireframes)
+- [8. Diagrama de classes de domínio](#8-diagrama-de-classes-de-domínio)
+- [9. Lista de decisões de arquitetura (com justificativas)](#9-decisoes-de-arquiterura)
+- [10. Diagramas de classes de projeto](#10-diagrama-classe-projeto)
+- [11. Diagramas de sequência de projeto](#11-diagrama-de-sequencia)
+- [12. URL de acesso ao repositório de código-fonte do grupo](#12-url-repositorio-codigo-fonte)
+- [13. URL de acesso ao quadro de acompanhamento do projeto do grupo](#13-url-acesso-acompanhamento-projeto-grupo)
 
 # 1. Introdução
 Atualmente há vários jogos disponíveis na web que podem ser jogados a partir do navegador, sem a necessidade de instalar nada mais. É o que estamos chamando neste documento de browser games.GoodBrowserGames deverá ser uma comunidade web onde seus membros poderão compartilhar as suas impressões 
 sobre os browser gamers que já jogaram, identificando o que gostaram e o que não gostaram. Com estas informações, o GoodBrowserGames poderá dar para cada membro recomendações de browser games que ele ainda não conhece e que provavelmente irá gostar. A sua equipe recebeu a responsabilidade de 
 desenvolver o sistema GoodBrowserGames e este documento descreve o que é desejável ter neste novo sistema.
 
-# 2. Objetivos funcionais
+# 2. Interessados
+
+# 3. Objetivos funcionais
 
 1. O administrador do GoodBrowserGames será responsável por cadastrar os browser games que serão avaliados pelos membros.
 
@@ -57,12 +75,19 @@ b. 5 membros que realizaram o maior número de avaliações.
 c. 5 jogos que têm a maior nota média de avaliação (neste caso, só devem ser levados em conta os jogos que já receberam pelo menos 4 avaliações no período)
 d. 3 categorias que receberam maior número de avaliações
 
-# 3. Casos de uso
+# 4. Objetivos funcionais
+
+
+# 5. Casos de uso
 
 A figura a seguir apresenta o diagrama de casos de uso:
 ![caso de uso](https://github.com/Hypertroly/GoodBrowserGames/blob/64232b0add4f09fe00ae641eabea44288978c0f2/Caso%20de%20uso.jpeg)
 
-# 4. Wireframes
+# 6. Descrição detalhada dos casos de uso principais
+
+
+
+# 7. Wireframes
 
 A figura a seguir apresenta o wireframe de cadastro de usuário:
 ![1. Tela de Login](https://github.com/Hypertroly/GoodBrowserGames/blob/552c134f70734a3103a2c26e1c12de95010e79e4/1.Tela%20de%20login.jpeg)
@@ -79,4 +104,20 @@ A figura a seguir apresenta o wireframe Avaliar browser games:
 A figura a seguir apresenta o wireframe Avaliações do browser games:
 ![3. Avaliar jogos](https://github.com/Hypertroly/GoodBrowserGames/blob/71c8dacff55e51e03bc3e209e5db586f6c424d2d/5.%20Avalia%C3%A7%C3%B5es.png)
 
-# 5. Diagrama de Sequência
+# 8. Diagrama de classes de domínio
+
+
+# 9. Lista de decisões de arquitetura (com justificativas)
+
+
+# 10. Diagramas de classes de projeto
+
+
+# 11. Diagramas de sequência de projeto
+
+
+# 12. URL de acesso ao repositório de código-fonte do grupo
+
+
+# 13. URL de acesso ao quadro de acompanhamento do projeto do grupo
+
