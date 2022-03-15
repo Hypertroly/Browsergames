@@ -62,4 +62,27 @@ d. 3 categorias que receberam maior número de avaliações
 A figura a seguir apresenta o diagrama de casos de uso:
 ![caso de uso](https://github.com/Hypertroly/GoodBrowserGames/blob/64232b0add4f09fe00ae641eabea44288978c0f2/Caso%20de%20uso.jpeg)
 
+# 4. Wireframes
+
+A figura a seguir apresenta o wireframe de usuário:
+![WhatsApp Image 2021-03-19 at 22 27 16](https://github.com/Hypertroly/GoodBrowserGames/blob/552c134f70734a3103a2c26e1c12de95010e79e4/1.Tela%20de%20login.jpeg)
+
+A figura a seguir apresenta o wireframe selecionar item para avaliar:
+![selecionar item](https://user-images.githubusercontent.com/45408379/117559245-09080d80-b05a-11eb-811f-75d03eceba49.jpeg)
+
+A figura a seguir apresenta o wireframe cadastrar novo item:
+![WhatsApp Image 2021-03-19 at 21 45 38](https://user-images.githubusercontent.com/45408379/117559284-62703c80-b05a-11eb-9bc8-7eeb05492ae4.jpeg)
+
+A figura a seguir apresenta o wireframe cadastar novo livro:
+![WhatsApp Image 2021-03-19 at 22 10 02](https://user-images.githubusercontent.com/45408379/117559419-75374100-b05b-11eb-93d6-780f4122160b.jpeg)
+
+A figura a seguir apresenta o wireframe cadastar novo filme:
+![WhatsApp Image 2021-03-19 at 22 16 27](https://user-images.githubusercontent.com/45408379/117559434-97c95a00-b05b-11eb-8aa3-22546934c877.jpeg)
+
+A figura a seguir apresenta o wireframe cadastar nova série:
+![WhatsApp Image 2021-03-19 at 22 18 58](https://user-images.githubusercontent.com/45408379/117559456-c0515400-b05b-11eb-9c0c-851a78a10ee4.jpeg)
+
+A figura a seguir apresenta o wireframe de navegação:
+![Wireframe navegação](https://user-images.githubusercontent.com/45408379/117559484-263ddb80-b05c-11eb-9866-6a5ac4e9c529.png)
+
 
