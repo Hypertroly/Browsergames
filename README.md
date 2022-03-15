@@ -60,4 +60,6 @@ d. 3 categorias que receberam maior número de avaliações
 # 3. Casos de uso
 
 A figura a seguir apresenta o diagrama de casos de uso:
-![caso de uso](https://user-images.githubusercontent.com/45408379/117559006-060c1d80-b058-11eb-839a-d03cbd00bcd3.jpeg)
+![caso de uso](https://github.com/Hypertroly/GoodBrowserGames/blob/64232b0add4f09fe00ae641eabea44288978c0f2/Caso%20de%20uso.jpeg)
+
+
