@@ -104,6 +104,10 @@ A figura a seguir apresenta o wireframe Avaliar browser games:
 A figura a seguir apresenta o wireframe Avaliações do browser games:
 ![3. Avaliar jogos](https://github.com/Hypertroly/GoodBrowserGames/blob/71c8dacff55e51e03bc3e209e5db586f6c424d2d/5.%20Avalia%C3%A7%C3%B5es.png)
 
+A figura a seguir apresenta o wireframe Avaliações do browser games e pergunta se a informação foi útil:
+![3. Informacao util](https://github.com/Hypertroly/GoodBrowserGames/blob/8563bf4c8f3b84d51c631f9020e79452d386141c/6.%20Esta%20informa%C3%A7%C3%A3o%20foi%20%C3%BAtil.png)
+
+
 # 8. Diagrama de classes de domínio
 
 
