@@ -184,6 +184,11 @@ Decidimos usar, para o frontend, HTML, CSS e Javascript, por serem linguagens pa
 
 # 10. Diagramas de classes de projeto
 
+
+
+# 11. Diagramas de sequência de projeto
+
+
 Login:
 ![Login](https://github.com/Hypertroly/GoodBrowserGames/blob/55fb620d70b0bfaba10017793a9574075cde4de2/Diagrama%20de%20Sequencia.png)
 
@@ -192,9 +197,6 @@ Review:
 
 Recomendações:
 ![Recomendações](https://github.com/Hypertroly/GoodBrowserGames/blob/55fb620d70b0bfaba10017793a9574075cde4de2/Diagrama%20de%20Sequencia%203.png)
-
-
-# 11. Diagramas de sequência de projeto
 
 
 # 12. URL de acesso ao repositório de código-fonte do grupo
