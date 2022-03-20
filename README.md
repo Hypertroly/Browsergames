@@ -189,7 +189,7 @@ Decidimos usar, para o frontend, HTML, CSS e Javascript, por serem linguagens pa
 
 
 Login:
-![Login](https://github.com/Hypertroly/GoodBrowserGames/blob/55fb620d70b0bfaba10017793a9574075cde4de2/Diagrama%20de%20Sequencia.png)
+![dsadsadsad](https://user-images.githubusercontent.com/43524597/159187629-2a3e08d4-3bed-4db9-83e7-ae7a8b2129d3.png)
 
 Review:
 ![Review](https://github.com/Hypertroly/GoodBrowserGames/blob/55fb620d70b0bfaba10017793a9574075cde4de2/Diagrama%20de%20Sequencia%202.png)
