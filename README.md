@@ -24,8 +24,6 @@ GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias 
 - [9. Lista de decisões de arquitetura (com justificativas)](#9-decisoes-de-arquiterura)
 - [10. Diagramas de classes de projeto](#10-diagrama-classe-projeto)
 - [11. Diagramas de sequência de projeto](#11-diagrama-de-sequencia)
-- [12. URL de acesso ao repositório de código-fonte do grupo](#12-url-repositorio-codigo-fonte)
-- [13. URL de acesso ao quadro de acompanhamento do projeto do grupo](#13-url-acesso-acompanhamento-projeto-grupo)
 
 # 1. Introdução
 Atualmente há vários jogos disponíveis na web que podem ser jogados a partir do navegador, sem a necessidade de instalar nada mais. É o que estamos chamando neste documento de browser games.GoodBrowserGames deverá ser uma comunidade web onde seus membros poderão compartilhar as suas impressões 
@@ -184,6 +182,7 @@ Decidimos usar, para o frontend, HTML, CSS e Javascript, por serem linguagens pa
 
 # 10. Diagramas de classes de projeto
 
+![image](https://user-images.githubusercontent.com/43524597/159187497-800e75e3-141a-45df-9d6f-a11d7d0b24c3.png)
 
 
 # 11. Diagramas de sequência de projeto
