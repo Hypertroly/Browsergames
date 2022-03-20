@@ -7,7 +7,7 @@ GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias 
 **Integrantes do grupo:**
 
 - Nome: Jacques Ferreira Especier TIA: 41834011
-- Nome: Tiago Nunes
+- Nome: Tiago Nunes Bernardes de Sousa TIA: 31838502
 
 ---
 
