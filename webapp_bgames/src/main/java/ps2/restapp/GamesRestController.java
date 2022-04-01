@@ -76,7 +76,7 @@ public class GamesRestController {
 	}
 
 	@CrossOrigin
-	@PutMapping("/api/games/{id}")
+	@PutMapping("/api/games/{nome}")
 	public Game updateGame(@RequestBody Game c, @PathVariable String nome) {
 		Game game = null;
 		game = this.getGame(nome);
@@ -88,7 +88,7 @@ public class GamesRestController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping(value = "/api/games/{id}", produces = "application/json") // deletar item
+	@DeleteMapping(value = "/api/games/{nome}", produces = "application/json") // deletar item
 	public String deleteGame(@PathVariable String nome) {
 		Game game = this.getGame(nome);
 		boolean result = false;

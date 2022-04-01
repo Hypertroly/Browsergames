@@ -55,7 +55,7 @@
 			txtDescricao.value = '';
 			txtCategoria.value = '';
 			
-			txtNome.disabled = true;
+			txtNome.disabled = false;
 			txtURL.disabled = false;
 			txtURLVideo.disabled = false;
 			txtDescricao.disabled = false;
