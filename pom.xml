@@ -46,5 +46,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<start-class>C:\Users\T\Documents\GitHub\GoodBrowserGames\webapp_bgames\src\main</start-class>
 </project>
