@@ -1,1 +1,10 @@
-heroku buildpacks:set heroku/java
+{
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-java"
+    },
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
