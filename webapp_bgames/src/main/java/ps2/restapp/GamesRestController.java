@@ -34,7 +34,7 @@ public class GamesRestController {
 			gameBasic.setURL(game.getURL());
 			gameBasic.setURLVideo(game.getURLVideo());
 			gameBasic.setDescricao(game.getDescricao());
-			gameBasic.setCategoria_nomeCategoria(game.getCategoria_nomeCategoria());
+			gameBasic.setCategoria(game.getCategoria());
 			allGame.add(gameBasic);
 		}
 
@@ -44,12 +44,12 @@ public class GamesRestController {
 	@CrossOrigin
 	@GetMapping("/api/games/filtro")
 	@ResponseBody
-	public ArrayList<Game> getGamesbyCategoria_nomeCategoria(@RequestParam String Categoria_nomeCategoria) {
+	public ArrayList<Game> getGamesbyCategoria(@RequestParam String Categoria) {
 		Iterable<Game> games = gamesRepo.findAll();
 		ArrayList<Game> filtroGame = new ArrayList<Game>();
 
 		for (Game game : games) {
-			if (game.getCategoria_nomeCategoria().contains(Categoria_nomeCategoria)) {
+			if (game.getCategoria().contains(Categoria)) {
 				filtroGame.add(game);
 			}
 		}
@@ -88,7 +88,7 @@ public class GamesRestController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping(value = "/api/games/{id}", produces = "application/json") // deletar itemm
+	@DeleteMapping(value = "/api/games/{id}", produces = "application/json") // deletar item
 	public String deleteGame(@PathVariable String nome) {
 		Game game = this.getGame(nome);
 		boolean result = false;

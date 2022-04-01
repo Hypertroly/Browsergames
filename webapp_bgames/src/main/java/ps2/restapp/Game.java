@@ -25,8 +25,8 @@ public class Game {
 	@Column(name = "descricao")
 	private String descricao;
 
-	@Column(name = "categoria_nomeCategoria")
-	private String categoria_nomeCategoria;
+	@Column(name = "Categoria")
+	private String Categoria;
 
 	public Game() {
 		super();
@@ -64,12 +64,12 @@ public class Game {
 		this.descricao = descricao;
 	}
 
-	public String getCategoria_nomeCategoria() {
-		return categoria_nomeCategoria;
+	public String getCategoria() {
+		return Categoria;
 	}
 
-	public void setCategoria_nomeCategoria(String categoria_nomeCategoria) {
-		this.categoria_nomeCategoria = categoria_nomeCategoria;
+	public void setCategoria(String Categoria) {
+		this.Categoria = Categoria;
 	}
 
 }

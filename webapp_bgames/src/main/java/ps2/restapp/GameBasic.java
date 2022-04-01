@@ -6,7 +6,7 @@ public class GameBasic {
 	private String URL;
 	private String URLVideo;
 	private String descricao;
-	private String categoria_nomeCategoria;
+	private String Categoria;
 
 	public String getNome() {
 		return nome;
@@ -40,12 +40,12 @@ public class GameBasic {
 		this.descricao = descricao;
 	}
 
-	public String getCategoria_nomeCategoria() {
-		return categoria_nomeCategoria;
+	public String getCategoria() {
+		return Categoria;
 	}
 
-	public void setCategoria_nomeCategoria(String categoria_nomeCategoria) {
-		this.categoria_nomeCategoria = categoria_nomeCategoria;
+	public void setCategoria(String Categoria) {
+		this.Categoria = Categoria;
 	}
 
 }

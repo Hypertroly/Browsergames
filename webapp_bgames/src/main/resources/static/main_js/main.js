@@ -83,9 +83,9 @@
 			for (var i = 0; i<n; i++){
 				var c = Games[i];
 				linha = '<tr><td><a href="javascript:void(0)" onclick="selecionar(' + c.nome + ')">' + c.nome + '</a></td>'
-				  + '<td>' + c.URLVideo + '</td>'
-				  + '<td>' + c.Url + '</td>'
-				  + '<td>' + c.Descricao + '</td>'
+				  + '<td>' + c.urlvideo + '</td>'
+				  + '<td>' + c.url + '</td>'
+				  + '<td>' + c.descricao + '</td>'
 				  + '<td>' + c.categoria + '</td>';
 				
 				Tabela += linha;
@@ -116,7 +116,7 @@
 		}
 		
 		function selecionar(Nome){
-			const URL = 'http://localhost:8080/api/Games/' + Nome;
+			const URL = 'http://localhost:8080/api/games/' + Nome;
 			fetch(URL)
 				.then(resposta => {if (!resposta.ok) throw Error(resposta.status); return resposta;})
 				.then(resposta => resposta.json())
@@ -127,7 +127,7 @@
 		}
 		
 		async function listarGames(){
-			const URL = 'http://localhost:8080/api/Games';
+			const URL = 'http://localhost:8080/api/games';
 			fetch(URL)
 				.then(resposta => {if (!resposta.ok) throw Error(resposta.status); return resposta;})
 				.then(resposta => resposta.json())
@@ -138,7 +138,7 @@
 		}
 		
 		async function criarGame(){
-			const URL = 'http://localhost:8080/api/Games';
+			const URL = 'http://localhost:8080/api/games';
 			const dados = {
 					'nome': txtNome.value,
 					'url': txtURL.value,
@@ -163,7 +163,7 @@
 		}
 		
 		async function alterarGame(){
-			const URL = 'http://localhost:8080/api/Games/' + txtNome.value;
+			const URL = 'http://localhost:8080/api/games/' + txtNome.value;
 			const dados = {
 					'nome': txtNome.value,
 					'urlvideo': txtURL.value,
@@ -188,7 +188,7 @@
 		}
 		
 		async function apagarGame(){
-			const URL = 'http://localhost:8080/api/Games/' + txtNome.value;
+			const URL = 'http://localhost:8080/api/games/' + txtNome.value;
 			const req = {
 					method: 'DELETE',
 			};
