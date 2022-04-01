@@ -30,6 +30,9 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<configuration>
+                    		<skip>true</skip>
+                	</configuration>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -46,5 +49,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<start-class>C:\Users\T\Documents\GitHub\GoodBrowserGames\webapp_bgames\src\main</start-class>
+
 </project>
