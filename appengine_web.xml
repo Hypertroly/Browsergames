@@ -1,2 +1,0 @@
-$ mkdir -p src/main/webapp/WEB-INF/
-$ touch src/main/webapp/WEB-INF/appengine-web.xml
