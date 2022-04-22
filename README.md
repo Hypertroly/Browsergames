@@ -1,7 +1,7 @@
 # Projeto - Mackenzie Prática Profissional Em Análise Desenvolvimento De Sistemas Turma 05H - 2022/1
 
 Proposta de desenvolvimento:
-GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias jogando browser games.
+GoodBrowserGames - Uma comunidade para usuários compartilharem suas experiências jogando browser games.
 
 ---
 **Integrantes do grupo:**
@@ -26,7 +26,7 @@ GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias 
 - [11. Diagramas de sequência de projeto](#11-diagrama-de-sequencia)
 
 # 1. Introdução
-Atualmente há vários jogos disponíveis na web que podem ser jogados a partir do navegador, sem a necessidade de instalar nada mais. É o que estamos chamando neste documento de browser games.GoodBrowserGames deverá ser uma comunidade web onde seus membros poderão compartilhar as suas impressões 
+Atualmente existem vários jogos disponíveis na web que podem ser jogados a partir do navegador, sem a necessidade de instalar nada mais. É o que estamos chamando neste documento de browser games. GoodBrowserGames deverá ser uma comunidade web onde seus membros poderão compartilhar as suas impressões 
 sobre os browser gamers que já jogaram, identificando o que gostaram e o que não gostaram. Com estas informações, o GoodBrowserGames poderá dar para cada membro recomendações de browser games que ele ainda não conhece e que provavelmente irá gostar. A sua equipe recebeu a responsabilidade de 
 desenvolver o sistema GoodBrowserGames e este documento descreve o que é desejável ter neste novo sistema.
 
@@ -34,7 +34,7 @@ desenvolver o sistema GoodBrowserGames e este documento descreve o que é desej�
 # 2. Interessados
 Administradores - Podem cadastrar jogos para receber reviews ao escolher um genêro, link e descrição e obter os 5 jogos que receberam maior número de avaliações, 5 membros que realizaram o maior número de avaliações, 5 jogos que têm a maior nota média de avaliação e as 3 categorias que receberam maior número de avaliações.
 
-Usuários - Podem dar notas e reviews em jogos selecionados por um administrador, receber recomendações a partir de suas notas, pesquisar por jogos especificos e pelas reviews mais úteis.
+Usuários - Podem dar notas e reviews em jogos selecionados por um administrador, receber recomendações a partir de suas notas, pesquisar por jogos específicos e pelas reviews mais úteis.
 
 # 3. Objetivos funcionais
 
@@ -196,10 +196,4 @@ Review:
 
 Recomendações:
 ![Recomendações](https://github.com/Hypertroly/GoodBrowserGames/blob/55fb620d70b0bfaba10017793a9574075cde4de2/Diagrama%20de%20Sequencia%203.png)
-
-
-# 12. URL de acesso ao repositório de código-fonte do grupo
-
-
-# 13. URL de acesso ao quadro de acompanhamento do projeto do grupo
 
