@@ -1,7 +1,7 @@
 # Projeto - Mackenzie Prática Profissional Em Análise Desenvolvimento De Sistemas Turma 05H - 2022/1
 
 Proposta de desenvolvimento:
-GoodBrowserGames - Uma comunidade para usuários compartilhar suas experiencias jogando browser games.
+GoodBrowserGames - Uma comunidade para usuários compartilharem suas experiencias jogando browser games.
 
 ---
 **Integrantes do grupo:**
