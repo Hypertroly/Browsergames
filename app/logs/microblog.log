@@ -30,3 +30,7 @@ Traceback (most recent call last):
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'form' is undefined
 2022-04-21 23:06:53,128 INFO: Microblog startup [in C:\Users\T\Desktop\GoodBrowserGames\app\__init__.py:45]
+2022-04-24 21:02:22,728 INFO: Microblog startup [in C:\Users\T\Desktop\GoodBrowserGames\app\__init__.py:45]
+2022-04-24 21:05:17,170 INFO: Microblog startup [in C:\Users\T\Desktop\GoodBrowserGames\app\__init__.py:45]
+2022-04-24 21:12:05,094 INFO: Microblog startup [in C:\Users\T\Desktop\GoodBrowserGames\app\__init__.py:45]
+2022-04-24 21:19:46,778 INFO: Microblog startup [in C:\Users\T\Desktop\GoodBrowserGames\app\__init__.py:45]
