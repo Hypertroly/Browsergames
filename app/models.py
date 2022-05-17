@@ -136,3 +136,12 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+class Game(SearchableMixin, db.Model):
+    __searchable__ = ['nome']
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(140))
+    url = db.Column(db.String(140))
+    urlvideo = db.Column(db.String(140))
+    descricao = db.Column(db.String(244))
+    categoria = db.Column(db.String(140))
