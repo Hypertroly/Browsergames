@@ -19,17 +19,21 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         _l('Repeat Password'), validators=[DataRequired(),
                                            EqualTo('password')])
+    full_name = StringField(_l('Full name'), validators=[DataRequired()])
+    birthday = StringField(_l('Birthday'), validators=[DataRequired()])
+    country = StringField(_l('Country'), validators=[DataRequired()])
+    state = StringField(_l('State'), validators=[DataRequired()])
     submit = SubmitField(_l('Register'))
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError(_('Please use a different username.'))
+            raise ValidationError(_l('Please use a different username.'))
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError(_('Please use a different email address.'))
+            raise ValidationError(_l('Please use a different email address.'))
 
 
 class ResetPasswordRequestForm(FlaskForm):

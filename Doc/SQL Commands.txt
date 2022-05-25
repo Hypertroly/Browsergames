@@ -1,0 +1,22 @@
+CREATE TABLE "Post"("id" serial PRIMARY KEY,
+"body" VARCHAR(140),
+"timestamp" TIMESTAMP,
+FOREIGN KEY ("users_id") REFERENCES "Users" ("id"), 
+"language" VARCHAR(5)
+);
+
+CREATE TABLE "Review"("id" serial PRIMARY KEY,
+"body" VARCHAR(140),
+"stars" INTEGER,
+"timestamp" TIMESTAMP,
+FOREIGN KEY ("users_id") REFERENCES "Users" ("id"), 
+"language" VARCHAR(5)
+);
+
+CREATE TABLE "Users"("id" serial PRIMARY KEY, 
+"username" VARCHAR(64) UNIQUE NOT NULL, 
+"email" VARCHAR(120) UNIQUE NOT NULL, 
+"password_hash" VARCHAR(128), 
+"about_me" VARCHAR(140), 
+"last_seen" TIMESTAMP
+);

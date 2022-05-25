@@ -3,7 +3,8 @@ from flask import render_template
 from app.forms import LoginForm
 from flask import render_template, flash, redirect, url_for
 from flask_login import current_user, login_user
-from app.models import User
+from app.main.forms import GameForm
+from app.models import Game, User, Categoria
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
@@ -113,8 +114,7 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', title='Edit Profile',
-                           form=form)
+    return render_template('edit_profile.html', title='Edit Profile', form=form)
 
 @app.route('/follow/<username>', methods=['POST'])
 @login_required

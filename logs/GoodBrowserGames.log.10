@@ -1,0 +1,106 @@
+2022-05-20 20:56:15,248 ERROR: Exception on /index [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 46, in index
+    return render_template('index.html', title=_('Home'), form=form,
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\index.html", line 10, in block 'app_content'
+    <li><a href="{{ url_for('main.create_game') }}">{{ _('Create Game') }}</a></li>
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.create_game'. Did you mean 'main.translate_text' instead?
+2022-05-20 21:01:27,045 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 21:07:22,792 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 21:08:01,715 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 21:10:00,728 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 21:11:17,816 ERROR: Exception on /create_game [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 172, in create_game
+    return redirect(url_for('index'))
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2022-05-20 21:12:01,168 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 21:12:40,876 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 22:51:02,564 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-20 22:58:13,861 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:18:52,084 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:18:59,056 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:19:19,577 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:19:26,646 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:19:31,192 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-23 19:20:18,021 ERROR: Exception on /create_game [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 167, in create_game
+    game = Game(nome = form.nome.data, url = form.url.data, urlvideo = form.urlvideo.data, descricao = form.descricao.data, nome_categoria = form.nome_categoria.data)
+  File "<string>", line 4, in __init__
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1142, in _declarative_constructor
+    raise TypeError(
+TypeError: 'nome' is an invalid keyword argument for Game
+2022-05-23 19:20:50,380 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]

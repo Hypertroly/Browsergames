@@ -61,10 +61,15 @@ followers = db.Table(
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    full_name = db.Column(db.String(64))
+    birthday = db.Column(db.String(10))
+    state = db.Column(db.String(64))
+    country = db.Column(db.String(64))
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    reviews = db.relationship('Review', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
@@ -136,12 +141,31 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+    
+class Category(SearchableMixin, db.Model):
+    __searchable__ = ['name']
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(140))
 
 class Game(SearchableMixin, db.Model):
-    __searchable__ = ['nome']
+    __searchable__ = ['name']
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(140))
-    url = db.Column(db.String(140))
-    urlvideo = db.Column(db.String(140))
-    descricao = db.Column(db.String(244))
-    categoria = db.Column(db.String(140))
+    name = db.Column(db.String(64))
+    url = db.Column(db.String(244))
+    urlvideo = db.Column(db.String(244))
+    description = db.Column(db.String(244))
+    name_category = db.Column(db.String(140), db.ForeignKey('category.name'))
+    reviews = db.relationship('Review', backref='game', lazy='dynamic')
+
+class Review(SearchableMixin, db.Model):
+    __searchable__ = ['stars']
+    id = db.Column(db.Integer, primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
+    body = db.Column(db.String(255))
+    stars = db.Column(db.Integer())
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    language = db.Column(db.String(5))
+    
+    def __repr__(self):
+        return '<Review {}>'.format(self.body)
