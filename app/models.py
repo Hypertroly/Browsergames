@@ -158,7 +158,6 @@ class Game(SearchableMixin, db.Model):
     reviews = db.relationship('Review', backref='game', lazy='dynamic')
 
 class Review(SearchableMixin, db.Model):
-    __searchable__ = ['stars']
     id = db.Column(db.Integer, primary_key=True)
     game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
     body = db.Column(db.String(255))
@@ -166,6 +165,7 @@ class Review(SearchableMixin, db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     language = db.Column(db.String(5))
+    useful = db.Column(db.String(64), index=True)
     
     def __repr__(self):
         return '<Review {}>'.format(self.body)

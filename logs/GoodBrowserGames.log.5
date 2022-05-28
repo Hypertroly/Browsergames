@@ -1,4 +1,4 @@
-2022-05-23 19:49:22,333 ERROR: Exception on /game/test [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-05-27 23:30:09,197 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,40 +10,29 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 198, in game
-    return render_template('game.html', user=user, reviews=reviews.items,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 10, in block 'app_content'
-    <form action="{{ url_for('main.game.review', name=game.name) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.game.review' with values ['name']. Did you mean 'main.game' instead?
-2022-05-23 19:56:39,127 ERROR: Exception on /game/test/review [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 236, in most_useful
+    highrev = Review(body='', author='', stars='', game='',language='', useful='')
+  File "<string>", line 4, in __init__
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1145, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 458, in __set__
+    self.impl.set(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1226, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1248, in fire_replace_event
+    value = fn(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1683, in emit_backref_from_scalar_set_event
+    instance_state(child),
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2022-05-27 23:33:54,140 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,11 +44,30 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 220, in review_game
-    return render_template('create_review.html', title=_('Review'), form=form, review=review, name=name, language=language)
-UnboundLocalError: local variable 'review' referenced before assignment
-2022-05-23 19:56:48,876 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-23 19:56:54,052 ERROR: Exception on /game/test [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 236, in most_useful
+    highrev = Review(body='', author='', stars='', game='',language='', useful='')
+  File "<string>", line 4, in __init__
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1145, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 458, in __set__
+    self.impl.set(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1226, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1248, in fire_replace_event
+    value = fn(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1683, in emit_backref_from_scalar_set_event
+    instance_state(child),
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2022-05-27 23:34:56,574 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 23:34:58,591 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -71,37 +79,26 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 198, in game
-    return render_template('game.html', user=user, reviews=reviews.items,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 10, in block 'app_content'
-    <form action="{{ url_for('main.game.create_review', name=game.name) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.game.create_review' with values ['name']. Did you mean 'main.create_game' instead?
-2022-05-23 20:00:32,316 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 236, in most_useful
+    highrev = Review(body='', author='', stars='', game='',language='', useful='')
+  File "<string>", line 4, in __init__
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1145, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 458, in __set__
+    self.impl.set(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1226, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1248, in fire_replace_event
+    value = fn(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 1683, in emit_backref_from_scalar_set_event
+    instance_state(child),
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2022-05-27 23:35:39,602 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]

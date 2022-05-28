@@ -9,6 +9,8 @@
     {% endif %}
     <li><a href="{{ url_for('main.create_game') }}">{{ _('Create Game') }}</a></li>
     <li><a href="{{ url_for('main.create_category') }}">{{ _('Create Category') }}</a></li>
+    <li><a href="{{ url_for('main.most_useful') }}">{{ _('Most Useful Reviews') }}</a></li>
+    <br>
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}

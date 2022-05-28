@@ -1,5 +1,4 @@
-2022-05-23 19:39:26,538 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-23 19:39:29,003 ERROR: Exception on /game/test [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-05-27 20:34:01,678 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -11,37 +10,11 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 198, in game
-    return render_template('game.html', user=user, posts=reviews.items,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 7, in block 'app_content'
-    <h1>{{ _('Game') }}: {{ game.name }}</h1>
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'game' is undefined
-2022-05-23 19:44:58,060 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-23 19:45:00,621 ERROR: Exception on /game/test [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 222, in useful
+    useful = int(review.useful) + 1
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2022-05-27 20:42:58,940 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 20:43:04,128 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,37 +26,74 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 198, in game
-    return render_template('game.html', user=user, reviews=reviews.items,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 10, in block 'app_content'
-    <form action="{{ url_for('main.game.review', name=game.name) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.game.review' with values ['name']. Did you mean 'main.game' instead?
-2022-05-23 19:49:19,664 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 221, in useful
+    useful = str(int(str(review.useful)) + 1)
+ValueError: invalid literal for int() with base 10: 'None'
+2022-05-27 20:45:12,213 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 20:45:16,296 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 222, in useful
+    useful = str(int(str(review.useful)) + 1)
+ValueError: invalid literal for int() with base 10: 'None'
+2022-05-27 20:58:21,372 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 20:58:26,257 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 221, in useful
+    review = Review.query.filter_by(user_id=user.id).first()
+AttributeError: 'NoneType' object has no attribute 'id'
+2022-05-27 21:12:26,687 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 221, in useful
+    review = Review.query.filter_by(user_id=user.id).first()
+AttributeError: 'NoneType' object has no attribute 'id'
+2022-05-27 21:52:56,288 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 21:57:10,836 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 22:01:58,514 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 22:03:00,187 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 22:03:04,282 ERROR: Exception on /useful/game/test/1 [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 221, in useful
+    useful = str(int(str(review.useful)) + 1)
+ValueError: invalid literal for int() with base 10: 'None'
+2022-05-27 22:28:03,332 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 23:29:57,369 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]

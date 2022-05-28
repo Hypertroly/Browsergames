@@ -1,79 +1,4 @@
-2022-05-24 19:30:59,457 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:32:07,076 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:32:28,932 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:32:33,644 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:32:37,611 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:39:08,020 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:43:12,364 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:43:28,074 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:43:46,640 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 21:43:50,056 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:18:46,660 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:18:57,569 ERROR: Exception on /auth/register [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
-    self.dialect.do_execute(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\auth\routes.py", line 42, in register
-    if form.validate_on_submit():
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_wtf\form.py", line 100, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\wtforms\form.py", line 318, in validate
-    return super(Form, self).validate(extra)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\wtforms\form.py", line 150, in validate
-    if not field.validate(self, extra):
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\wtforms\fields\core.py", line 226, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\wtforms\fields\core.py", line 246, in _run_validation_chain
-    validator(form, self)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\auth\forms.py", line 25, in validate_username
-    user = User.query.filter_by(username=username.data).first()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 2760, in first
-    return self.limit(1)._iter().first()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 2844, in _iter
-    result = self.session.execute(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 1689, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1451, in _execute_clauseelement
-    ret = self._execute_context(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1813, in _execute_context
-    self._handle_dbapi_exception(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1994, in _handle_dbapi_exception
-    util.raise_(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
-    raise exception
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
-    self.dialect.do_execute(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
-FROM user 
-WHERE user.username = ?
- LIMIT ? OFFSET ?]
-[parameters: ('t', 1, 0)]
-(Background on this error at: http://sqlalche.me/e/14/e3q8)
-2022-05-24 22:19:09,282 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:19:21,273 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:20:05,286 ERROR: Exception on /create_game [POST] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-05-27 23:46:39,939 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,21 +10,97 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 167, in create_game
-    game = Game(name = form.name.data, url = form.url.data, urlvideo = form.urlvideo.data, description = form.description.data, name_categoria = form.name_category.data)
-  File "<string>", line 4, in __init__
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
-    raise exception
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1142, in _declarative_constructor
-    raise TypeError(
-TypeError: 'name_categoria' is an invalid keyword argument for Game
-2022-05-24 22:20:34,257 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:24:03,044 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:25:22,992 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-24 22:26:34,466 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 248, in most_useful
+    reviews = game.reviews.query.order_by(Review.useful).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+AttributeError: 'AppenderBaseQuery' object has no attribute 'query'
+2022-05-27 23:48:30,189 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 23:48:32,679 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 248, in most_useful
+    reviews = game.reviews.query.order_by(Review.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+AttributeError: 'AppenderBaseQuery' object has no attribute 'query'
+2022-05-28 00:21:06,323 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 00:38:55,167 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 248, in most_useful
+    reviews = game.reviews.query.order_by(Review.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+AttributeError: 'AppenderBaseQuery' object has no attribute 'query'
+2022-05-28 00:40:31,244 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 00:41:06,821 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 14:26:14,264 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 14:27:39,116 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 14:28:03,561 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 14:42:19,494 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:00:21,300 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:01:51,288 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:06:06,730 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:06:50,477 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:09:02,815 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:09:10,601 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 252, in most_useful
+    reviews = game.reviews.order_by(Review.timestamp.desc()).paginate(
+AttributeError: 'function' object has no attribute 'reviews'
+2022-05-28 15:09:33,396 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:09:35,009 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 252, in most_useful
+    reviews = Review.order_by(Review.timestamp.desc()).paginate(
+AttributeError: type object 'Review' has no attribute 'order_by'
+2022-05-28 15:09:52,604 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-28 15:09:53,570 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 258, in most_useful
+    return render_template('game.html', title=_('Game'), user=current_user, reviews=reviews.items, name=name,
+NameError: name 'name' is not defined
+2022-05-28 15:10:42,425 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]

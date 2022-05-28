@@ -198,7 +198,7 @@ def game(name):
         except LangDetectException:
             language = ''
         review = Review(body=form.review.data, author=current_user, stars=form.stars.data, game=game,
-                    language=language)
+                    language=language, useful='0')
         db.session.add(review)
         db.session.commit()
         flash(_('Your review is now live!'))
@@ -210,11 +210,41 @@ def game(name):
                        page=reviews.next_num) if reviews.has_next else None
     prev_url = url_for('main.game', name=game.name,
                        page=reviews.prev_num) if reviews.has_prev else None
-    return render_template('game.html', user=current_user, reviews=reviews.items, name=name,
+    return render_template('game.html', title=_('Game'), user=current_user, reviews=reviews.items, name=name,
                            next_url=next_url, prev_url=prev_url, form=form, game=game)
 
-@bp.route('/test', methods=['GET', 'POST'])
+@bp.route('/useful/game/<name>/<review_id>', methods=['GET', 'POST'])
 @login_required
-def test():
-    form = ReviewForm()
-    return render_template('test.html', form=form)
+def useful(review_id, name):
+    form = EmptyForm()
+    review = Review.query.filter_by(id=review_id).first()
+    useful = str(int(str(review.useful)) + 1)
+    if form.validate_on_submit():
+        review.useful = useful
+        db.session.commit()
+        return redirect(url_for('main.game', name=name))
+    else:
+        return redirect(url_for('main.index'))
+    
+@bp.route('/most_useful', methods=['GET', 'POST'])
+@login_required
+def most_useful():
+    #x = 0
+    #highest = 0
+    #ordered = []
+    #cont = 0
+    #highrev = Review(body='', useful='')
+    #review = Review.query.order_by(Review.useful)
+    #while cont < Review.query.all().count():
+    #    while x < Review.query.all().count():
+    #        if int(reviews[x].useful) > highest:
+    #            highest = int(reviews[x].useful)
+    #            highrev = reviews[x]
+    #    ordered.append(highrev)
+    #    reviews.remove(highrev)
+    page = request.args.get('page', 1, type=int)
+    reviews = Review.query.order_by(Review.useful).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.most_useful', page=reviews.next_num) if reviews.has_next else None
+    prev_url = url_for('main.most_useful', page=reviews.prev_num) if reviews.has_prev else None
+    return render_template('most_useful.html', title=_('Most Useful Reviews'), review=reviews.items,
+                           next_url=next_url, prev_url=prev_url)

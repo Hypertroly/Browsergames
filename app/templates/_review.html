@@ -25,6 +25,14 @@
                             '{{ g.locale }}');">{{ _('Translate') }}</a>
             </span>
             {% endif %}
+            <br>
+            <span> 
+                <form action="{{ url_for('main.useful', name=game.name, review_id=review.id) }}" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.submit(value=_('This review was useful'), class_='btn btn-default') }}
+                </form>
+                {{ _('%(count)s consider it is useful', count=review.useful) }}
+            </span>
         </td>
     </tr>
 </table>

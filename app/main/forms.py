@@ -41,7 +41,7 @@ class GameForm(FlaskForm):
     url = TextAreaField(('URL'), validators=[DataRequired()])
     urlvideo = TextAreaField(('Video URL'))
     description = TextAreaField(('Description'))
-    name_category = TextAreaField(('Category'), validators=[DataRequired()])
+    name_category = SelectField(('Category'), choices=['Strategy', 'Shooter', 'Puzzle', 'Arcade', 'Role Playing Game (RPG)', 'Sports', 'Action'], validators=[DataRequired()])
     photo = FileField(('Photo'))
     submit = SubmitField(('Submit'))
     

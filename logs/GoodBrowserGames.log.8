@@ -1,4 +1,4 @@
-2022-05-23 19:35:26,743 ERROR: Exception on /game [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-05-26 20:47:07,044 ERROR: Exception on /game/test1 [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,8 +10,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 232, in explore_games
-    return render_template('game.html', title=_('Explore'),
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 213, in game
+    return render_template('game.html', user=current_user, reviews=reviews.items, name=name,
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
@@ -20,8 +20,8 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
@@ -34,13 +34,19 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
     {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 7, in block 'app_content'
-    <h1>{{ _('Game') }}: {{ game.name }}</h1>
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'game' is undefined
-2022-05-23 19:37:25,757 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-23 19:37:28,053 ERROR: Exception on /game [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 16, in block 'app_content'
+    {% include '_review.html' %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\_review.html", line 27, in top-level template code
+    <form action="{{ url_for('main.useful', game=game) }}" method="post">
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.useful' with values ['game']. Did you forget to specify values ['name']?
+2022-05-27 20:06:13,921 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-05-27 20:07:36,472 ERROR: Exception on /game/test [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -52,8 +58,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 232, in explore_games
-    return render_template('game.html', title=_('Explore'),
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 213, in game
+    return render_template('game.html', user=current_user, reviews=reviews.items, name=name,
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
@@ -62,8 +68,8 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 1, in top-level template code
-    {% extends "base.html" %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
@@ -76,9 +82,15 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
     {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 7, in block 'app_content'
-    <h1>{{ _('Game') }}: {{ current_game.name }}</h1>
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'current_game' is undefined
-2022-05-23 19:37:58,729 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 16, in block 'app_content'
+    {% include '_review.html' %}
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\_review.html", line 27, in top-level template code
+    <form action="{{ url_for('main.useful', game=game, review=review.id) }}" method="post">
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.useful' with values ['game', 'review']. Did you forget to specify values ['name']?
+2022-05-27 20:08:18,905 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
