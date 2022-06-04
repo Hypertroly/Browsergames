@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Recommendation') }}</h1>
+    <td width="70px"></td>
+    {% for game in recgames %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                <a href="{{ url_for('main.game', name=game.name) }}">
+                    {{ game.name }}
+                </a>
+                {% endset %}
+                <br>
+                <h2>
+                    <a href="{{ url_for('main.game', name=game.name) }}">
+                        <span id="game{{ game.id }}">{{ game.name }}</span>
+                    </a>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

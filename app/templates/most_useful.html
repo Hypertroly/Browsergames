@@ -5,7 +5,38 @@
     <h1>{{ _('Most Useful Reviews') }}</h1>
     <br>
     {% for review in reviews %}
-        {% include '_review.html' %}
+    <table class="table table-hover">
+        <tr>
+            <td width="70px">
+                <a href="{{ url_for('main.user', username=review.author.username) }}">
+                    <img src="{{ review.author.avatar(70) }}" />
+                </a>
+            </td>
+            <td>
+                {% set user_link %}
+                    <a href="{{ url_for('main.user', username=review.author.username) }}">
+                        {{ review.author.username }}
+                    </a>
+                {% endset %}
+                {{ _('%(username)s said %(when)s with %(stars)s stars',
+                    username=user_link, when=moment(review.timestamp).fromNow(), stars=(review.stars)) }}
+                <br>
+                <span id="review{{ review.id }}">{{ review.body }}</span>
+                {% if review.language and review.language != g.locale %}
+                <br><br>
+                <span id="translation{{ review.id }}">
+                    <a href="javascript:translate(
+                                '#review{{ review.id }}',
+                                '#translation{{ review.id }}',
+                                '{{ review.language }}',
+                                '{{ g.locale }}');">{{ _('Translate') }}</a>
+                </span>
+                {% endif %}
+                <br>
+                <span>{{ _('%(count)s consider it is useful', count=review.useful) }}</span>
+            </td>
+        </tr>
+    </table>
     {% endfor %}
     <nav aria-label="...">
         <ul class="pager">

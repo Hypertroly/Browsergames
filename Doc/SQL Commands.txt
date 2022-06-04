@@ -13,10 +13,41 @@ FOREIGN KEY ("users_id") REFERENCES "Users" ("id"),
 "language" VARCHAR(5)
 );
 
-CREATE TABLE "Users"("id" serial PRIMARY KEY, 
+CREATE TABLE "User"("id" serial PRIMARY KEY, 
 "username" VARCHAR(64) UNIQUE NOT NULL, 
 "email" VARCHAR(120) UNIQUE NOT NULL, 
 "password_hash" VARCHAR(128), 
 "about_me" VARCHAR(140), 
-"last_seen" TIMESTAMP
+"last_seen" TIMESTAMP,
+"full_name" VARCHAR(64),
+"birthday" VARCHAR(10),
+"state" VARCHAR(64),
+"country" VARCHAR(64)
 );
+
+CREATE TABLE "Category"("id" serial PRIMARY KEY,
+"name" VARCHAR(140)
+);
+
+CREATE TABLE "Game"("id" serial PRIMARY KEY,
+"name" VARCHAR(64),
+"url" VARCHAR(244),
+"urlvideo" VARCHAR(244),
+"description" VARCHAR(244),
+FOREIGN KEY "name_category" REFERENCES "Category" ("name")
+);
+
+CREATE TABLE "Review"("id" serial PRIMARY KEY,
+"body" VARCHAR(255),
+"stars" INTEGER,
+"timestamp" TIMESTAMP,
+"language" VARCHAR(5),
+"useful" VARCHAR(64),
+FOREIGN KEY "game_id" REFERENCES "Game" ("id"),
+FOREIGN KEY "user_id" REFERENCES "User" ("id")
+);
+
+ALTER TABLE "Game" ADD CONSTRAINT "name_category" FOREIGN KEY (name) REFERENCES "Category"(name)
+ALTER TABLE "Review" ADD CONSTRAINT "game_id" FOREIGN KEY (id) REFERENCES "Game"(id)/////
+ALTER TABLE "Review" ADD CONSTRAINT "user_id" FOREIGN KEY (id) REFERENCES "User"(id)
+ALTER TABLE "Post" ADD CONSTRAINT "users_id" FOREIGN KEY (id) REFERENCES "User"(id)

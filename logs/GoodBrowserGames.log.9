@@ -1,4 +1,4 @@
-2022-05-26 20:36:49,521 ERROR: Exception on /game/test1 [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-05-30 18:07:59,470 ERROR: Exception on /recommendation [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,8 +10,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 213, in game
-    return render_template('game.html', user=current_user, reviews=reviews.items, name=name,
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 268, in recommendation
+    return render_template('recommendation.html', title=_('Recommendation'), recgames=recgames)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
@@ -20,7 +20,7 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 2, in top-level template code
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\recommendation.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -32,21 +32,21 @@ Traceback (most recent call last):
     {% block body -%}
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
     {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 56, in block 'content'
     {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 16, in block 'app_content'
-    {% include '_review.html' %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\_review.html", line 27, in top-level template code
-    <form action="{{ url_for('main.game.useful', review=review) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.game.useful' with values ['review']. Did you mean 'main.useful' instead?
-2022-05-26 20:42:08,316 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-26 20:42:10,155 ERROR: Exception on /game/test1 [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\recommendation.html", line 7, in block 'app_content'
+    {% for game in recgames %}
+TypeError: 'Pagination' object is not iterable
+2022-05-30 18:08:01,510 ERROR: Exception on /report [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: game_review_1.game_id
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,39 +58,35 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 213, in game
-    return render_template('game.html', user=current_user, reviews=reviews.items, name=name,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\game.html", line 16, in block 'app_content'
-    {% include '_review.html' %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\_review.html", line 27, in top-level template code
-    <form action="{{ url_for('main.useful', game=game, review=review) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.useful' with values ['game', 'review']. Did you forget to specify values ['name']?
-2022-05-26 20:47:05,263 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 256, in report
+    highavagames = Game.query.order_by(Game.reviews).paginate(page)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 2709, in all
+    return self._iter().all()
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 2844, in _iter
+    result = self.session.execute(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1451, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1813, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1994, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: game_review_1.game_id
+[SQL: SELECT game.id AS game_id, game.name AS game_name, game.url AS game_url, game.urlvideo AS game_urlvideo, game.description AS game_description, game.name_category AS game_name_category 
+FROM game ORDER BY game_review_1.game_id = game.id AND game_review_1.review_id = game.id
+ LIMIT ? OFFSET ?]
+[parameters: (20, 0)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)

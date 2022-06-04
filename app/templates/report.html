@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Games with more reviews') }}</h1>
+    <td width="70px"></td>
+    {% for game in highavagames %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                <a href="{{ url_for('main.game', name=game.name) }}">
+                    {{ game.name }}
+                </a>
+                {% endset %}
+                <br>
+                <h2>
+                    <a href="{{ url_for('main.game', name=game.name) }}">
+                        <span id="game{{ game.id }}">{{ game.name }}</span>
+                    </a>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+    <h1>{{ _('Users with more reviews') }}</h1>
+    <td width="70px"></td>
+    {% for user in highavausers %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                <a href="{{ url_for('main.user', username=user.username) }}">
+                    {{ user.username }}
+                </a>
+                {% endset %}
+                <br>
+                <h2>
+                    <a href="{{ url_for('main.user', username=user.username) }}">
+                        <span id="user{{ user.id }}">{{ user.username }}</span>
+                    </a>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+    <h1>{{ _('Games with more stars') }}</h1>
+    <td width="70px"></td>
+    {% for game in highstargames %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                <a href="{{ url_for('main.game', name=game.name) }}">
+                    {{ game.name }}
+                </a>
+                {% endset %}
+                <br>
+                <h2>
+                    <a href="{{ url_for('main.game', name=game.name) }}">
+                        <span id="game{{ game.id }}">{{ game.name }}</span>
+                    </a>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+    <h1>{{ _('Category with more reviews') }}</h1>
+    <td width="70px"></td>
+    {% for category in highavacategory %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                    {{ category.name }}
+                {% endset %}
+                <br>
+                <h2>
+                    <span id="category{{ category.id }}">{{ category.name }}</span>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

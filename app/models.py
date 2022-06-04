@@ -58,6 +58,18 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+user_review = db.Table(
+    'user_review',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('review_id', db.Integer, db.ForeignKey('review.id'))
+)
+
+game_review = db.Table(
+    'game_review',
+    db.Column('game_id', db.Integer, db.ForeignKey('game.id')),
+    db.Column('review_id', db.Integer, db.ForeignKey('review.id'))
+)
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -70,6 +82,11 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     reviews = db.relationship('Review', backref='author', lazy='dynamic')
+    #reviews = db.relationship(
+    #    'Review', secondary=user_review,
+    #    primaryjoin=(user_review.c.user_id == id),
+    #    secondaryjoin=(user_review.c.review_id == id),
+    #    backref=db.backref('user_review', lazy='dynamic'), lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
@@ -146,7 +163,7 @@ class Category(SearchableMixin, db.Model):
     __searchable__ = ['name']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(140))
-
+    
 class Game(SearchableMixin, db.Model):
     __searchable__ = ['name']
     id = db.Column(db.Integer, primary_key=True)
@@ -156,6 +173,11 @@ class Game(SearchableMixin, db.Model):
     description = db.Column(db.String(244))
     name_category = db.Column(db.String(140), db.ForeignKey('category.name'))
     reviews = db.relationship('Review', backref='game', lazy='dynamic')
+    #reviews = db.relationship(
+    #    'Review', secondary=game_review,
+    #    primaryjoin=(game_review.c.game_id == id),
+    #    secondaryjoin=(game_review.c.review_id == id),
+    #    backref=db.backref('game_review', lazy='dynamic'), lazy='dynamic')
 
 class Review(SearchableMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)

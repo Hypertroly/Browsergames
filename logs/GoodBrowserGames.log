@@ -1,4 +1,26 @@
-2022-05-28 15:16:45,902 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+2022-06-04 02:23:07,518 ERROR: Exception on /recommendation [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 798, in __getattr__
+    return getattr(self.comparator, key)
+AttributeError: 'Comparator' object has no attribute 'count'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 326, in __getattr__
+    return getattr(self.comparator, key)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1240, in __getattr__
+    return self._fallback_getattr(key)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\properties.py", line 427, in _fallback_getattr
+    return getattr(self.__clause_element__(), key)
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 800, in __getattr__
+    util.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+AttributeError: Neither 'AnnotatedColumn' object nor 'Comparator' object has an attribute 'count'
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,39 +32,15 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 260, in most_useful
-    return render_template('most_useful.html', title=_('Game'), user=current_user, reviews=reviews.items,
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\most_useful.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\most_useful.html", line 8, in block 'app_content'
-    {% include '_review.html' %}
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\templates\_review.html", line 30, in top-level template code
-    <form action="{{ url_for('main.useful', name=game.name, review_id=review.id) }}" method="post">
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'game' is undefined
-2022-05-28 15:26:40,095 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-28 15:26:42,848 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 268, in recommendation
+    game_id = randint(0, Game.id.count())
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\attributes.py", line 328, in __getattr__
+    util.raise_(
+  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Game.id has an attribute 'count'
+2022-06-04 02:26:12,167 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-06-04 02:26:21,295 ERROR: Exception on /recommendation [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,23 +52,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 246, in most_useful
-    for Game in Game.query.all():
-UnboundLocalError: local variable 'Game' referenced before assignment
-2022-05-28 15:28:57,967 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
-2022-05-28 15:29:00,457 ERROR: Exception on /most_useful [GET] [in c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "c:\users\t\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 248, in most_useful
-    for game in games():
-TypeError: 'list' object is not callable
-2022-05-28 15:34:15,533 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+  File "C:\Users\T\Desktop\flask-GoodBrowserGames\app\main\routes.py", line 268, in recommendation
+    game_count = db.query(Game).count()
+AttributeError: 'SQLAlchemy' object has no attribute 'query'
+2022-06-04 02:27:24,179 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]
+2022-06-04 02:35:23,126 INFO: GoodBrowserGames startup [in C:\Users\T\Desktop\flask-GoodBrowserGames\app\__init__.py:82]

@@ -1,15 +1,16 @@
 from datetime import datetime
+from random import randint
 from flask import render_template, flash, redirect, url_for, request, g, \
     jsonify, current_app
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
+from sqlalchemy import desc
 from langdetect import detect, LangDetectException
 from app import db
-from app.main.forms import CategoryForm, EditProfileForm, EmptyForm, PostForm, ReviewForm, SearchForm
+from app.main.forms import CategoryForm, EditProfileForm, EmptyForm, PostForm, ReviewForm, SearchForm, GameForm
 from app.models import Category, User, Post, Game, Review
 from app.translate import translate
 from app.main import bp
-from app.main.forms import GameForm
 
 
 @bp.before_app_request
@@ -229,22 +230,43 @@ def useful(review_id, name):
 @bp.route('/most_useful', methods=['GET', 'POST'])
 @login_required
 def most_useful():
-    #x = 0
-    #highest = 0
-    #ordered = []
-    #cont = 0
-    #highrev = Review(body='', useful='')
-    #review = Review.query.order_by(Review.useful)
-    #while cont < Review.query.all().count():
-    #    while x < Review.query.all().count():
-    #        if int(reviews[x].useful) > highest:
-    #            highest = int(reviews[x].useful)
-    #            highrev = reviews[x]
-    #    ordered.append(highrev)
-    #    reviews.remove(highrev)
     page = request.args.get('page', 1, type=int)
-    reviews = Review.query.order_by(Review.useful).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+    reviews = Review.query.order_by(desc(Review.useful)).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('main.most_useful', page=reviews.next_num) if reviews.has_next else None
     prev_url = url_for('main.most_useful', page=reviews.prev_num) if reviews.has_prev else None
-    return render_template('most_useful.html', title=_('Most Useful Reviews'), review=reviews.items,
+    return render_template('most_useful.html', title=_('Most Useful Reviews'), reviews=reviews.items,
                            next_url=next_url, prev_url=prev_url)
+    
+@bp.route('/games', methods=['GET', 'POST'])
+@login_required
+def games():
+    page = request.args.get('page', 1, type=int)
+    games = Game.query.order_by(Game.name).paginate(
+        page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.games', page=games.next_num) \
+        if games.has_next else None
+    prev_url = url_for('main.games', page=games.prev_num) \
+        if games.has_prev else None
+    return render_template('games.html', title=_('Games'), games=games.items, next_url=next_url,
+                           prev_url=prev_url)
+    
+@bp.route('/report', methods=['GET', 'POST'])
+@login_required
+def report():
+    page = request.args.get('page', 1, type=int)
+    highavagames = Game.query.order_by(Game.name).paginate(page, current_app.config['5'], False)
+    highavausers = User.query.order_by(User.username).paginate(page, current_app.config['5'], False)
+    highstargames = Game.query.order_by(Game.name).paginate(page, current_app.config['5'], False)
+    highavacategory = Category.query.order_by(Category.name).paginate(page, current_app.config['5'], False)
+    return render_template('report.html', title=_('Report'), highavagames=highavagames.items, highavausers=highavausers.items,
+                           highstargames=highstargames.items, highavacategory=highavacategory.items)
+    
+@bp.route('/recommendation', methods=['GET', 'POST'])
+@login_required
+def recommendation():
+    page = request.args.get('page', 1, type=int)
+    session = db.session()
+    game_count = session.query(Game).count()
+    game_id = randint(0, game_count)
+    recgames = Game.query.filter_by(id=game_id).first().paginate(page, current_app.config['1'], False)
+    return render_template('recommendation.html', title=_('Recommendation'), recgames=recgames.items)

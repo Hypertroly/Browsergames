@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Games') }}</h1>
+    <td width="70px"></td>
+    {% for game in games %}
+        <table class="table table-hover">
+            <tr>
+                {% set user_link %}
+                <a href="{{ url_for('main.game', name=game.name) }}">
+                    {{ game.name }}
+                </a>
+                {% endset %}
+                <br>
+                <h2>
+                    <a href="{{ url_for('main.game', name=game.name) }}">
+                        <span id="game{{ game.id }}">{{ game.name }}</span>
+                    </a>
+                </h2>
+                <br>
+            </tr>
+        </table>
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer games') }}
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    {{ _('Older games') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+{% endblock %}
